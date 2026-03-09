@@ -1,0 +1,39 @@
+@import '../variables';
+@import '../mixins';
+
+.top-artisans {
+  padding: $spacing-3xl 0;
+  background: linear-gradient(135deg, lighten($secondary-light, 25%) 0%, $white 100%);
+
+  &-header {
+    text-align: center;
+    margin-bottom: $spacing-2xl;
+  }
+
+  &-title {
+    @include heading-style;
+    font-size: $font-size-3xl;
+    color: $primary-dark;
+    margin-bottom: $spacing-sm;
+  }
+
+  &-subtitle {
+    color: $dark-gray;
+    font-size: $font-size-lg;
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+    @include container;
+
+    @include respond-to(md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to(lg) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

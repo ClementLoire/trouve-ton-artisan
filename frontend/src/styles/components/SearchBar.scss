@@ -1,0 +1,75 @@
+@import '../variables';
+@import '../mixins';
+
+.search-bar {
+  display: flex;
+  gap: $spacing-md;
+  width: 100%;
+  max-width: 600px;
+
+  @include respond-to(xs) {
+    flex-direction: column;
+  }
+
+  @include respond-to(md) {
+    flex-direction: row;
+  }
+
+  &-wrapper {
+    position: relative;
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .search-icon {
+    position: absolute;
+    left: $spacing-md;
+    color: $dark-gray;
+    font-size: $font-size-lg;
+    pointer-events: none;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: $spacing-md $spacing-md $spacing-md calc(#{$spacing-md} * 3);
+    border: 2px solid $medium-gray;
+    border-radius: $border-radius-md;
+    font-size: $font-size-base;
+    font-family: $font-primary;
+    transition: all $transition-base;
+
+    &:focus {
+      outline: none;
+      border-color: $primary;
+      box-shadow: 0 0 0 3px rgba($primary, 0.1);
+    }
+
+    &::placeholder {
+      color: $dark-gray;
+    }
+  }
+
+  .clear-button {
+    @include reset-button;
+    position: absolute;
+    right: $spacing-md;
+    @include flex-center;
+    width: 24px;
+    height: 24px;
+    border-radius: $border-radius-full;
+    background-color: $medium-gray;
+    color: $white;
+    font-size: $font-size-sm;
+    transition: all $transition-base;
+
+    &:hover {
+      background-color: $error;
+    }
+  }
+
+  .search-button {
+    @include button-primary;
+    white-space: nowrap;
+  }
+}

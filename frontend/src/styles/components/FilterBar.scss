@@ -1,0 +1,54 @@
+@import '../variables';
+@import '../mixins';
+
+.filter-bar {
+  display: flex;
+  gap: $spacing-md;
+  flex-wrap: wrap;
+  padding: $spacing-lg;
+  background-color: $light-gray;
+  border-radius: $border-radius-lg;
+
+  @include respond-to(xs) {
+    flex-direction: column;
+  }
+
+  @include respond-to(md) {
+    flex-direction: row;
+  }
+}
+
+.filter-group {
+  flex: 1;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-xs;
+}
+
+.filter-label {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: $dark-gray;
+}
+
+.filter-select {
+  padding: $spacing-sm $spacing-md;
+  border: 2px solid $medium-gray;
+  border-radius: $border-radius-md;
+  font-size: $font-size-base;
+  font-family: $font-primary;
+  background-color: $white;
+  cursor: pointer;
+  transition: all $transition-base;
+
+  &:hover {
+    border-color: $primary-light;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $primary;
+    box-shadow: 0 0 0 3px rgba($primary, 0.1);
+  }
+}

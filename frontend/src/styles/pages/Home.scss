@@ -1,0 +1,146 @@
+@import '../variables';
+@import '../mixins';
+
+.home {
+  min-height: 100vh;
+}
+
+.hero {
+  background: linear-gradient(135deg, $primary 0%, $primary-dark 100%);
+  color: $white;
+  padding: $spacing-3xl * 2 $spacing-lg;
+  text-align: center;
+
+  &-content {
+    @include container;
+    @include flex-center;
+    @include flex-column;
+    gap: $spacing-xl;
+  }
+
+  &-title {
+    font-family: $font-secondary;
+    font-size: $font-size-4xl;
+    font-weight: $font-weight-bold;
+    margin: 0;
+    @include slide-up;
+
+    @include respond-to(xs) {
+      font-size: $font-size-3xl;
+    }
+  }
+
+  &-subtitle {
+    font-size: $font-size-xl;
+    opacity: 0.9;
+    max-width: 600px;
+  }
+
+  &-button {
+    @include button-secondary;
+    font-size: $font-size-lg;
+    padding: $spacing-md $spacing-2xl;
+    margin-top: $spacing-md;
+  }
+}
+
+.categories {
+  padding: $spacing-3xl 0;
+
+  &-container {
+    @include container;
+  }
+
+  &-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: $spacing-xl;
+
+    @include respond-to(sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond-to(lg) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+.category-card {
+  @include card-base;
+  @include card-hover;
+  padding: $spacing-2xl;
+  text-align: center;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    .category-icon {
+      transform: scale(1.2) rotate(5deg);
+    }
+  }
+}
+
+.category-icon {
+  font-size: $font-size-4xl * 1.5;
+  margin-bottom: $spacing-md;
+  transition: transform $transition-base;
+}
+
+.category-name {
+  @include heading-style;
+  font-size: $font-size-xl;
+  margin-bottom: $spacing-sm;
+}
+
+.category-description {
+  color: $dark-gray;
+  font-size: $font-size-sm;
+}
+
+.section-title {
+  @include heading-style;
+  font-size: $font-size-3xl;
+  text-align: center;
+  margin-bottom: $spacing-2xl;
+  color: $primary-dark;
+}
+
+.cta {
+  background: linear-gradient(135deg, $primary-light 0%, $primary 100%);
+  color: $white;
+  padding: $spacing-3xl $spacing-lg;
+  text-align: center;
+
+  &-content {
+    @include container;
+    @include flex-center;
+    @include flex-column;
+    gap: $spacing-lg;
+  }
+
+  &-title {
+    font-family: $font-secondary;
+    font-size: $font-size-3xl;
+    font-weight: $font-weight-bold;
+    margin: 0;
+  }
+
+  &-text {
+    font-size: $font-size-lg;
+    max-width: 600px;
+    opacity: 0.95;
+  }
+
+  &-button {
+    @include button-secondary;
+    background-color: $white;
+    color: $primary;
+    font-size: $font-size-lg;
+    padding: $spacing-md $spacing-2xl;
+
+    &:hover {
+      background-color: $secondary-light;
+    }
+  }
+}
