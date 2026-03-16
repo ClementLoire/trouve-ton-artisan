@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import TopArtisans from '../components/TopArtisans';
-import './Home.scss';
+import '../styles/pages/Home.scss';
 
 const Home = () => {
   const categories = [

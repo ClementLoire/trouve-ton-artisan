@@ -5,7 +5,7 @@ import ArtisanCard from '../components/ArtisanCard';
 import SearchBar from '../components/SearchBar';
 import FilterBar from '../components/FilterBar';
 import Loading from '../components/Loading';
-import './ArtisansList.scss';
+import '../styles/pages/ArtisansList.scss';
 
 const ArtisansList = () => {
   const [searchParams, setSearchParams] = useSearchParams();

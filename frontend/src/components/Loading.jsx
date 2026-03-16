@@ -1,5 +1,5 @@
 import React from 'react';
-import './Loading.scss';
+import '../styles/components/Loading.scss';
 
 const Loading = ({ message = "Chargement..." }) => {
   return (

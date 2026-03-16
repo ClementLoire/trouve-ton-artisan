@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { getTopArtisans } from '../services/api';
 import ArtisanCard from './ArtisanCard';
 import Loading from './Loading';
-import './TopArtisans.scss';
+import '../styles/components/TopArtisans.scss';
 
 const TopArtisans = () => {
   const [artisans, setArtisans] = useState([]);

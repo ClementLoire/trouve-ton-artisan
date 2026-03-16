@@ -1,5 +1,5 @@
 import React from 'react';
-import './FilterBar.scss';
+import '../styles/components/FilterBar.scss';
 
 const FilterBar = ({ 
   categories, 

@@ -3,7 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { getArtisanById } from '../services/api';
 import { FaStar, FaMapMarkerAlt, FaEnvelope, FaGlobe, FaArrowLeft } from 'react-icons/fa';
 import Loading from '../components/Loading';
-import './ArtisanDetail.scss';
+import '../styles/pages/ArtisanDetail.scss';
 
 const ArtisanDetail = () => {
   const { id } = useParams();
@@ -80,7 +80,7 @@ const ArtisanDetail = () => {
             )}
             <div className="artisan-rating">
               <div className="stars">{renderStars(artisan.note)}</div>
-              <span className="note">{artisan.note.toFixed(1)}/5</span>
+              <span className="note">{Number(artisan.note).toFixed(1)}/5</span>
             </div>
           </div>
 

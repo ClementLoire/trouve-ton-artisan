@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
-import './SearchBar.scss';
+import '../styles/components/SearchBar.scss';
 
 const SearchBar = ({ onSearch, placeholder = "Rechercher un artisan..." }) => {
   const [searchTerm, setSearchTerm] = useState('');

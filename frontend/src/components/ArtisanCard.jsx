@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaStar, FaMapMarkerAlt, FaPhone, FaEnvelope, FaGlobe } from 'react-icons/fa';
-import './ArtisanCard.scss';
+import '../styles/components/ArtisanCard.scss';
 
 const ArtisanCard = ({ artisan }) => {
   const renderStars = (note) => {
@@ -47,7 +47,7 @@ const ArtisanCard = ({ artisan }) => {
           <div className="stars">
             {renderStars(artisan.note)}
           </div>
-          <span className="note">{artisan.note.toFixed(1)}/5</span>
+          <span className="note">{Number(artisan.note).toFixed(1)}/5</span>
         </div>
 
         <div className="artisan-card-info">
